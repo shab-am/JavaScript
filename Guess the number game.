@@ -1,0 +1,23 @@
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max) + 1;
+  }
+  let b = getRandomInt(100);
+  let chances = 0;
+while (1) {
+  let a = prompt("Enter a number between 1 and 100");
+  a = parseInt(a);
+  chances++;
+  if (a == b) {
+    console.log("You have entered right number");
+    let score = 100 - chances;
+    console.log("The actual number was " + b)
+    console.log("Your score is " + score);
+    break;
+  }
+  if (a > b) {
+    console.log("Your guessed number is greater than the actual number");
+  }
+  if (a < b) {
+    console.log("Your guessed number is lesser than the actual number");
+  }
+}
