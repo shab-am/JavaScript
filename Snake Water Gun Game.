@@ -1,0 +1,24 @@
+function computerChoice(){
+    const choices = ["snake", "water", "gun"];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
+}
+function playGame(userChoice){
+    const compChoice=computerChoice();
+    console.log("your choice: " + userChoice)
+    console.log("Computer's choice: " + compChoice)
+
+    if(userChoice==compChoice)
+        console.log("It's a tie!")
+    else if( (userChoice == "snake" && compChoice == "water") || (userChoice == "water" && compChoice == "gun") || (userChoice == "gun" && compChoice == "snake") )
+        console.log("Congratulations! You are the winner")
+    else
+        console.log("Computer Won!")
+}
+while(1){
+    let userChoice=prompt("Enter your choice:\n Snake or Water or Gun").toLowerCase();
+    if (userChoice=="snake" || userChoice=="gun"  || userChoice=="water")
+        playGame(userChoice);
+    else
+        console.log("Invalid input")
+}
