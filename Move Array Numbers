@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [1, 2, 3, 4];
+      const output = move(numbers, 1, -1);
+      console.log(output);
+      function move(numbers, index, offset) {
+        const position = index + offset;
+        if (position >= numbers.length || position < 0) {
+          console.error("Invalid offset");
+          return;
+        }
+        const newArray = [...numbers];
+        const element = newArray.splice(index, 1)[0];
+        const elem = newArray.splice(position, 0, element);
+        return newArray;
+      }
+    </script>
+  </body>
+</html>
